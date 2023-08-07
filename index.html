@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__header">
+            <h1 class="title">Generator</h1>
+            <hr>
+        </div>
+
+        <div class="container__input">
+            <label for="length">
+                Length
+                <input type="number" min="6" max="128" oninput="validateLen(this)" name="length" id="length"
+                    placeholder="Min: 6 Max: 128">
+            </label>
+            <label for="number-count">
+                Minimum Numbers
+                <input type="number" min="0" max="12" oninput="validateMax(this)" name="number-count" id="number-count"
+                    placeholder="Max: 12">
+            </label>
+            <label for="special-count">
+                Minimum Specials
+                <input type="number" min="0" max="12" oninput="validateMax(this)" name="special-count"
+                    id="special-count" placeholder="Max: 12">
+            </label>
+        </div>
+
+        <div class="container__options">
+            <label tabindex=0 class="checkbox-label" for="is-uppercase">
+                Include Uppercase Characters
+                <input type="checkbox" onchange="isChecked()" name="is-uppercase" id="is-uppercase">
+                <span class="custom-checkbox"></span>
+            </label>
+            <label tabindex=0 class="checkbox-label" for="is-number">
+                Include Numbers
+                <input type="checkbox" onchange="isChecked()" name="is-number" id="is-number">
+                <span class="custom-checkbox"></span>
+            </label>
+            <label tabindex=0 class="checkbox-label" for="is-special">
+                Include Special Characters
+                <input type="checkbox" onchange="isChecked()" name="is-special" id="is-special">
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+
+        <button id="generate-button">Regenerate</button>
+        <code id="output-box">...</code>
+    </div>
+    <div class="alert">Copied!</div>
+</body>
+
+</html>
